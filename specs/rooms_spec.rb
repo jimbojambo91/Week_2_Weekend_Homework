@@ -12,7 +12,7 @@ class TestRoom < Minitest::Test
     @guest_1 = Guest.new("Larry", 100)
     @guest_2 = Guest.new("Steve", 50)
     @guest_3 = Guest.new("John", 10)
-    @room_1 = Room.new(2, 50)
+    @room_1 = Room.new("The Royal Room",2, 50)
   end
 
   def test_check_in_guest
