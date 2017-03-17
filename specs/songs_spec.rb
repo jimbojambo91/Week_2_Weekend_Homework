@@ -3,9 +3,9 @@ require('minitest/rg')
 require('pry')
 require_relative('../songs')
 
-class TestSongs < Minitest::Test
+class TestSong < Minitest::Test
   def setup
-    @song_1 = Songs.new("Living on a prayer", "Bon Jovi")
+    @song_1 = Song.new("Living on a prayer", "Bon Jovi")
   end
 
   def test_song_title
