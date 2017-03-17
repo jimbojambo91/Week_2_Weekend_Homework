@@ -1,7 +1,7 @@
 class Viewer
 
   def get_guest_name
-    puts "Hey Buddy, What's your name"
+    puts "Good evening, what's your name?"
     return gets.chomp
   end
 
@@ -10,9 +10,23 @@ class Viewer
     return gets.chomp
   end
 
-  def get_guest_room_selection
-    puts "Which room would you like to visit? We have the following: #{@room_1.room_name} which costs £#{@room_1.entry_fee}"
-    return gets.chomp
+  def get_guest_room_selection(room_arr)
+    puts "Which room would you like to visit? We have the following:"
+    for rooms in room_arr
+    puts "#{rooms.room_name} which costs £#{rooms.entry_fee}."
+    end
+    puts "Please type your selection:"
+    room_choice = gets.chomp
+    for rooms in room_arr
+      binding.pry
+      if rooms.room_name == room_choice
+        return rooms
+      else
+        return "That is not a valid choice"
+      end
+    end
+  end
+
 end
 
 #   def start(player_name)
