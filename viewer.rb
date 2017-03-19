@@ -7,7 +7,7 @@ class Viewer
 
   def get_guest_money
     puts "To get in tonight, you are gonna need some money. How much you got?"
-    return gets.chomp
+    return gets.chomp.to_f
   end
 
   def get_guest_room_selection(room_arr)
@@ -16,15 +16,13 @@ class Viewer
     puts "#{rooms.room_name} which costs £#{rooms.entry_fee}."
     end
     puts "Please type your selection:"
-    room_choice = gets.chomp
+    room_choice = gets.chomp.downcase
     for rooms in room_arr
-      binding.pry
-      if rooms.room_name == room_choice
+      if rooms.room_name.downcase == room_choice
         return rooms
-      else
-        return "That is not a valid choice"
       end
     end
+    print "That is not a valid choice"
   end
 
 end

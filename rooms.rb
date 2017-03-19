@@ -17,10 +17,10 @@ class Room
         guest.money -= @entry_fee
         @guests << guest
       else 
-        return "Not tonight mate"
+        print "You don't seem to have the funds to enter that room."
       end
     else
-      return "Sorry, Room is full"
+      print "Sorry, Room is full"
     end
   end
 
