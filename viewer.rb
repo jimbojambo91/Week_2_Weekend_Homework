@@ -23,6 +23,7 @@ class Viewer
       end
     end
     print "That is not a valid choice"
+    return false
   end
 
 end

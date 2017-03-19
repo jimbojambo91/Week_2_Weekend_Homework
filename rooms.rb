@@ -43,4 +43,27 @@ class Room
     @playlist.delete(song)
   end
 
+  def favourite_song
+
+  end
+
+  def room_playing_favourite_song
+    @playlist.find{|song| 
+      @guests.find{|guest|
+        if song.title == guest.favourite_song
+          return "#{guest.name}: This my jam!"
+        end
+      }
+    }
+    # for song in playlist
+    #   for guest in guests
+    #     if song.title == guest.favourite_song
+    #       print "This is my jam!"
+    #     end
+    #   end
+    #   return nil
+    # end
+    
+  end
+
 end
